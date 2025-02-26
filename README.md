@@ -10,16 +10,16 @@ This project sets up Jenkins on an Nginx server using Docker. Nginx acts as a re
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-repo/jenkins-nginx-docker.git
+   git clone https://github.com/cryptofoxtechcom/jenkins_repo.git
    cd jenkins-nginx-docker
    docker build -t jenkins-nginx .
-   docker run -d -p 80:80 -p 8080:8080 --name jenkins-nginx-container -v jenkins-data:/var/lib/jenkins jenkins-nginx
-```
+   docker run -d -p 88:88 -p 8080:8080 --name jenkins-nginx-container -v jenkins-data:/var/lib/jenkins jenkins-nginx
 
+```
 
 Access Jenkins
 
-Open your browser and go to http://localhost.
+Open your browser and go to http://localhost:88.
 
 Jenkins will be accessible through the Nginx reverse proxy.
 
@@ -27,7 +27,9 @@ Get the Jenkins Initial Admin Password
 
 bash
 Copy
-docker exec jenkins-nginx-container cat /var/lib/jenkins/secrets/initialAdminPassword
+docker exec jenkins-nginx-container cat /var/jenkins_home/secrets/initialAdminPassword
+
+
 File Structure 📂
 Copy
 jenkins-nginx-docker/
