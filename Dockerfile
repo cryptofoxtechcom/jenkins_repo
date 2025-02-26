@@ -15,5 +15,8 @@ COPY nginx.conf /etc/nginx/nginx.conf
 # Expose ports for Nginx and Jenkins
 EXPOSE 80 8080
 
+# Create a volume for Jenkins data
+VOLUME /var/lib/jenkins
+
 # Start Nginx and Jenkins
 CMD service nginx start && service jenkins start && tail -f /var/log/nginx/access.log
