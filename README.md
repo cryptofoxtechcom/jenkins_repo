@@ -25,10 +25,10 @@ Jenkins will be accessible through the Nginx reverse proxy.
 
 Get the Jenkins Initial Admin Password
 
-bash
+```bash
 Copy
 docker exec jenkins-nginx-container cat /var/jenkins_home/secrets/initialAdminPassword
-
+```
 
 File Structure 📂
 Copy
