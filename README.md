@@ -1,6 +1,6 @@
 # Jenkins on Nginx with Docker 🐳
 
-This project sets up Jenkins on an Nginx server using Docker. Nginx acts as a reverse proxy for Jenkins, making it accessible on port 80. A Docker volume is included for persistent storage of Jenkins data.
+This project sets up Jenkins on an Nginx server using Docker. Nginx acts as a reverse proxy for Jenkins, making it accessible on port 88 (You can change the port to match your available ports). A Docker volume is included for persistent storage of Jenkins data.
 
 ## Prerequisites 🛠️
 - Docker installed on your machine.
