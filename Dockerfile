@@ -3,9 +3,9 @@ FROM nginx:latest
 
 # Install Jenkins and other dependencies
 RUN apt-get update && \
-    apt-get install -y openjdk-11-jdk wget && \
-    wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | apt-key add - && \
-    sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list' && \
+    apt-get install -y openjdk-11-jdk wget gnupg2 && \
+    wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | gpg --dearmor -o /usr/share/keyrings/jenkins-keyring.gpg && \
+    sh -c 'echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.gpg] https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list' && \
     apt-get update && \
     apt-get install -y jenkins
 
