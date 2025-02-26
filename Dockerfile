@@ -8,7 +8,7 @@ RUN apt-get update && \
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
-EXPOSE 80 8080
+EXPOSE 88 8080
 
 VOLUME /var/jenkins_home
 
