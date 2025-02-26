@@ -5,7 +5,7 @@ FROM nginx:latest
 RUN apt-get update && \
     apt-get install -y wget gnupg2 software-properties-common && \
     wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | gpg --dearmor -o /usr/share/keyrings/jenkins-keyring.gpg && \
-    sh -c 'echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.gpg] https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list' && \
+    echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.gpg] https://pkg.jenkins.io/debian-stable binary/" > /etc/apt/sources.list.d/jenkins.list && \
     apt-get update && \
     apt-get install -y openjdk-11-jdk jenkins
 
