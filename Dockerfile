@@ -10,7 +10,7 @@ RUN apt-get update && \
     apt-get install -y openjdk-11-jdk jenkins
 
 # Copy the Nginx configuration file
-COPY nginx.conf /etc/nginx/nginx.conf.template
+COPY nginx.conf /etc/nginx/nginx.conf
 
 # Expose ports for Nginx and Jenkins
 EXPOSE 88 8080
@@ -18,8 +18,5 @@ EXPOSE 88 8080
 # Create a volume for Jenkins data
 VOLUME /var/lib/jenkins
 
-# Replace environment variables in the Nginx configuration file
-CMD envsubst '${HOST_IP}' < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf && \
-    service nginx start && \
-    service jenkins start && \
-    tail -f /var/log/nginx/access.log
+# Start Nginx and Jenkins
+CMD service nginx start && service jenkins start && tail -f /var/log/nginx/access.log
