@@ -1,0 +1,19 @@
+
+---
+
+### .gitignore
+```gitignore
+# Ignore Docker build cache
+**/docker-build-cache/
+
+# Ignore Jenkins workspace and logs
+**/jenkins/workspace/
+**/jenkins/logs/
+
+# Ignore local configuration files
+.env
+*.local
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
