@@ -17,8 +17,6 @@ This project sets up Jenkins on an Nginx server using Docker. Nginx acts as a re
    docker run -d -p 88:88 -p 8080:8080 --name jenkins-nginx-container -v jenkins-data:/var/lib/jenkins jenkins-nginx
    ```
 
-````
-
 Access Jenkins
 
 Open your browser and go to http://localhost:88.
@@ -30,7 +28,7 @@ Get the Jenkins Initial Admin Password
 ```bash
 Copy
 docker exec jenkins-nginx-container cat /var/jenkins_home/secrets/initialAdminPassword
-````
+```
 
 File Structure 📂
 
